@@ -1,0 +1,24 @@
+
+// 	$default: sans-serif;
+// 	@if $family	{ font-family: $family, $default; }
+// 	@if $size		{ font-size: $size; }
+// 	@if $colour	{ color: $colour; }
+// 	@if $weight	{ font-weight: $weight; }
+// 	@if $lh			{ line-height: $lh; }
+// }
+
+@mixin font-PTSerif($size: false, $colour: false, $weight: false,  $lh: false) {
+	font-family: 'PTSerif', sans-serif;
+	@if $size		{ font-size: $size; }
+	@if $colour	{ color: $colour; }
+	@if $weight	{ font-weight: $weight; }
+	@if $lh			{ line-height: $lh; }
+}
+
+@mixin font-SegoeUI($size: false, $colour: false, $weight: false,  $lh: false) {
+	font-family: 'Segoe UI', sans-serif;
+	@if $size		{ font-size: $size; }
+	@if $colour	{ color: $colour; }
+	@if $weight	{ font-weight: $weight; }
+	@if $lh			{ line-height: $lh; }
+}

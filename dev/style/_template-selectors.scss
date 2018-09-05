@@ -1,0 +1,19 @@
+%default_input {
+  outline: none;
+  padding: 0;
+  background-color: $color-3;
+  border: 1px solid transparent;
+}
+
+%default_button {
+	@extend %default_input;
+	
+  cursor: pointer;
+  transition: all .5s;
+  border: none;
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}

@@ -1,0 +1,21 @@
+//placeholders
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+
+  &::placeholder {
+    // @include font-roboto(14px, $color-8, 400);
+  }
+}
+
+//reset input[type=number]
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s;
+}

@@ -1,0 +1,1204 @@
+//libs
+@import "../libs/reset/reset.css";
+@import "../libs/animate/animate.css";
+@import "../libs/fotorama/fotorama.css";
+
+//fonts
+@import "fonts";
+
+//
+@import "variables";
+@import "mixins";
+@import "template-selectors";
+@import "general";
+
+
+// Let's Start =)
+* {
+  box-sizing: border-box;
+}
+
+.page {
+
+}
+
+.container {
+  max-width: 1175px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 0 15px; 
+}
+
+// <!-- Header -->
+// .header {
+//   padding: 10px 0;
+
+//   background: url('../img/bg_header.png') no-repeat bottom center / cover;
+//   box-shadow: 0px 0px 13px 0px rgba($color-4, 0.45);
+// }
+
+// .header-desktop {
+
+// }
+
+// .header-mobile {
+//   display: none;
+// }
+
+// .introduction {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .logo {
+//   width: 515/1366 * 100%;
+//   padding-bottom: 110/1366 * 100%; 
+//   background: url('../img/bg_header-logo.png') no-repeat center top / contain;
+//   position: relative;
+//   top: -10px;
+// }
+
+// .logo-mobile {
+//   width: 200px; 
+//   height: 50px; 
+//   background: url('../img/bg_header-logo.png') no-repeat center top / contain;
+// }
+
+// .nav {
+//   width: 450/1366 * 100%;
+//   display: flex;
+//   align-items: flex-end; 
+
+//   &__list {  
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__item {
+
+//     &-link {
+//       @include font-roboto(17px, $color-1, 400);
+//       text-transform: uppercase;
+
+//       &:hover {
+//         color: darken($color-1, 5%);
+//       }
+//     }
+
+//     &_drop {
+//       position: relative;
+
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         border: 5px solid;
+//         border-color: transparent transparent transparent $color-5;
+//         top: 20px;
+//         right: 20px;
+//         transition: 0.5s;
+//         transform: rotate(90deg);
+//       }
+//     }
+
+//     &_open {
+//       &::after {
+//         transform: rotate(270deg);
+//       }
+//     }
+//   }
+
+//   &__text {
+//     @include font-roboto(17px, $color-1, 400);
+//     text-transform: uppercase;
+//   }
+// }
+
+// .drop {
+//   display: none;
+//   padding: 0 0 0 20px;
+
+//   &__item {
+//     padding: 20px 0 0 0;
+//     border-bottom: 1px solid $color-3;
+    
+//     &-link {
+//       @include font-roboto(17px, $color-1, 400);
+      
+//       &:hover {
+//         color: darken($color-1, 5%);
+//       }
+
+//       &--active {
+//         text-decoration: underline;
+//       }
+
+//       &_langs {
+//         &:hover {
+//           text-decoration: underline;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .info {
+//   width: 325px;
+//   display: flex;
+
+//   &__title {
+//     @include font-roboto(20px, $color-1, 300);
+//     text-transform: uppercase;
+//   }
+
+//   &__city {
+//     @include font-roboto(19px, $color-1, 300);
+//   }
+
+//   &__left {
+//     padding: 0 10px 0 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-end;
+//     justify-content: space-between;
+
+//     &-wrap {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-end;
+//     }
+//   }
+
+//   &__langs {
+
+//     &-link {
+//       @include font-roboto(15px, $color-1, 300);     
+//       margin: 0 15px 0 0;      
+
+//       &:last-child {
+//         margin: 0;
+//       }
+
+//       &--active {
+//         text-decoration: underline;
+//       }
+
+//       &:hover {
+//         color: darken($color-1, 5%);
+//         text-decoration: underline;
+//       }
+//     }
+//   }
+
+//   &__right {
+//     border-left: 1px solid rgba($color-1, .4);
+//     padding: 0 0 0 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//   }
+
+//   &__numbers {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//   }
+
+//   &__number {
+//     margin: 5px 0 0 0;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+
+//     &-link {
+//       @include font-roboto(22px, $color-1, 300);
+
+//       &:hover {
+//         color: darken($color-1, 5%);
+//       }
+//     }
+//   }
+
+//   &__buttons {
+
+//   }
+
+//   &__button {
+//     @extend %default_button;
+//     @include font-roboto(15px, $color-3, 300);
+//     padding: 3px 10px;
+//     background-color: rgba($color-1, .7);
+
+//     &:hover {
+//       background-color: darken($color-1, 5%);
+//     }
+//   }
+// }
+
+// // <!-- Guide (nav_sticky) -->
+// .guide {
+//   display: none;
+//   width: 100%;
+
+//   position: fixed;
+//   top: 0;
+//   z-index: 300;
+
+//   background-color: $color-6;
+//   box-shadow: rgba($color-4, 0.3) 0px 1px 3px;
+
+//   &_colored {
+//     background-color: rgba($color-3, .8);
+//   }
+
+// }
+
+// .navigation {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 5px 15px;
+  
+//   &__logo {
+//     width: 400px;
+//     height: 50px;
+//     background: url('../img/bg_nav-logo.png') center center / cover no-repeat;
+//     position: relative;
+//     top: -5px;
+//   }
+
+//   &__list {
+//     width: 535/1366 * 100%;
+//     min-width: 430px;
+//     display: flex;
+//     justify-content: space-between; 
+//   }
+
+//   &__item {
+
+//   }
+
+//   &__link {
+//     @include font-roboto(17px, $color-7, 300); 
+//     text-transform: uppercase;
+
+//     &_active {
+//       color: rgba($color-7, .7);
+//     }
+//   }
+// }
+
+
+
+// // <!-- Intro -->
+// .intro {
+//   margin: 15px 0 0 0;
+// }
+
+// .opening {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+// .product {
+//   width: 600/1366 * 100%;
+//   display: flex;
+//   flex-direction: column;
+
+//   &__titles {
+//     position: relative;
+
+//     &::after {
+//       content: '';
+//       display: block;
+//       width: 145/600 * 100%;
+//       padding-bottom: 90/600 * 100%;
+//       background: url('../img/bg_price.png') center / contain no-repeat ;
+//       position: absolute;
+//       top: 10px;
+//       right: 10px;
+//     }
+//   }
+
+//   &__title {
+//     @include font-tahoma(57px, $color-3, 500); 
+
+//     background: linear-gradient(to right, rgba(120,192,216,1) 0%,rgba(120,192,216,1) 21%,rgba(192,240,240,1) 79%,rgba(192,240,240,1) 100%);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     filter: drop-shadow( 1px 1px 1px rgba(0,0,0, 0.5) );
+
+//     position: relative;
+
+//     &_center {
+//       top: -5px;
+//     }
+
+//     &_bottom {
+//       top: -15px;
+//     }
+
+//     &_size-l {
+//       @include font-tahoma(44px, $color-3, 500); 
+//     }
+//   }
+
+//   &__background {
+//     align-self: center;
+//     width: 500/600 *100%;
+//     padding-bottom: 385/600 * 100%;
+//     background: url('../img/bg_brand-bottles.png') center / contain no-repeat;
+//   }
+
+//   &__comments {
+//     align-self: center;
+//   }
+
+//   &__comments > &__text {
+//     &::before {
+//       content: '*';
+//       @include font-roboto(14px, $color-2, 400); 
+//       position: absolute;
+//       top: -7px;
+//       left: -9px;
+//     }
+//   }
+
+//   &__text {
+//     @include font-roboto(14px, $color-2, 400, 1.55);
+//     position: relative;
+
+//     &_strong {
+//       @include font-roboto(14px, $color-5, 700);
+//     }
+//   }
+// }
+
+// .order {
+//   width: 520/1366 * 100%;
+//   // margin: 60px 0 0 0; 
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+
+//   &__titles {
+//     padding: 0 0 20px 0;
+//     border-bottom: 1px solid rgba($color-3, .5);
+
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   &__title {
+//     @include font-roboto(28px, $color-2, 300);
+
+//     &_colored {
+//       @include font-roboto(30px, $color-5, 400);
+//     }
+
+//     &_size-m {
+//       @include font-roboto(23px, $color-2, 300);
+//     }
+//   }
+// }
+
+// .registration {
+//   // width: 395/520 * 100%;
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+
+//   &__residential {
+//     width: 392px;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__data {
+//     margin: 15px 0 0 0 ;
+//   }
+
+//   &__label {
+//     @include font-roboto(14px, $color-2, 400);
+//   }
+
+//   &__input {
+//     @extend %default_input;
+//     @include font-roboto(14px, $color-2, 400);
+//     width: 330px;
+//     padding: 3px 0 3px 10px;
+
+//     &_size-l {
+//       width: 100px;
+//       border: 1px solid $color-8;
+//     }
+//   }
+
+//   &__buttons {
+//     margin: 35px 0 0 0;
+//     align-self: center;
+//   }
+
+//   &__button {
+//     @extend %default_button;
+//     @include font-roboto(20px, $color-3, 500);
+//     border-radius: 5px;
+//     background-color: $color-5;
+//     padding: 8px 50px;
+
+//     &:hover {
+//       background-color: $color-1;
+//     }
+//   }
+// }
+
+// .calculation {
+
+//   &__form {
+//     width: 280/395 * 100%;
+//     margin: 20px 0 0 0;
+//     padding: 0 0 0 7px; 
+//     align-self: center;
+//   }
+
+//   &__quantity {
+//     margin: 20px 0 0 0;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+//   }
+
+//   &__label {
+//     @include font-roboto(14px, $color-2, 400);
+//   }
+
+//   &__input {
+//     @extend %default_input;
+//     @include font-roboto(14px, $color-2, 400);
+//     width: 120px;
+//     padding: 3px 0 3px 10px;
+
+//     &_size-l {
+//       width: 50px;
+//       padding: 3px 0;
+//       text-align: center;
+//     }
+//   }
+
+//   &__button {
+//     @extend %default_button;
+//     @include font-roboto(14px, $color-2, 700);
+//     width: 22px;
+//     padding: 3px 0;
+//   }
+
+//   &__text {
+//     margin: 20px 0 0 0;
+//     @include font-roboto(14px, $color-2, 400, 1.55);
+//     position: relative;   
+
+//     &::before {
+//       content: '*';
+//       @include font-roboto(17px, $color-2, 400);
+//       position: absolute;
+//       top: -7px;
+//       left: -9px;
+//     }
+//   }
+// }
+
+
+
+// //<!-- Instruction -->
+// .instruction {
+//   margin: 150px 0 0 0;
+//   box-shadow: 0 0 10px rgba($color-4, .5);
+//   background: url('../img/bg_chemical.png') center / contain repeat $color-3;
+// }
+
+// .manual {
+//   padding: 15px 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   &__title {
+//     @include font-roboto(33px, $color-2, 300);
+
+//     &_page-about {
+//       @include font-roboto(30px, $color-1, 300);
+//     }
+//   }
+
+//   &__text {
+//     margin: 30px 0 0 0;
+//     width: 1010/1366 * 100%;
+//     @include font-roboto(14px, $color-2, 300, 1.3);
+//     text-align: center;
+//   }
+// }
+
+// .cards {
+//   // margin: 30px 0 0 0;
+//   width: 1180/1366 * 100%;
+//   display: flex;
+//   justify-content: space-between;
+
+// }
+
+// .card {
+//   width: 240px;
+
+//   margin: 30px 0 0 0;
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+ 
+//   text-align: center;
+
+//   &__title {
+//     @include font-roboto(20px, $color-1, 400);
+//   }
+
+//   &__numbers {
+//     margin: 15px 0 0 0;
+//   }
+
+//   &__number {
+//     margin: 5px 0 0 0;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+//   }
+
+//   &__link {
+//     @include font-roboto(19px, $color-1, 400);
+
+//     &:hover {
+//       color: darken($color-1, 5%);
+//     }
+//   }
+
+//   &__text {
+//     margin: 15px 0 0 0;
+//     @include font-roboto(17px, $color-2, 300, 1.2);
+//   }
+
+//   &:nth-of-type(even) &__background {
+//     margin: 40px 0 0 0;
+//   }
+
+//   &__background {
+//     margin: 20px 0 0 0;
+//     width: 80px;
+//     height: 80px;
+//     background: url('../img/bg_tel.png') center / 80px 80px no-repeat;
+
+//     &_tel {
+
+//     }
+
+//     &_home {
+//       background-image: url('../img/bg_home.png');
+//     }
+
+//     &_bottles {
+//       background-image: url('../img/bg_bottles.png');
+//     }
+
+//     &_time {
+//       background-image: url('../img/bg_time.png');
+//     }
+//   }
+// }
+
+// .next-step {
+//   margin: 80px 0 0 0;
+//   width: 40px;
+//   height: 40px;
+//   background: url('../img/bg_next-step.png') center / 40px 40px no-repeat;
+// }
+
+
+
+// // <!-- Specification -->
+// .specification {
+//   margin: 95px 0 0 0;
+// }
+
+// .choice {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   &__title {
+//     @include font-roboto(36px, $color-2, 300);
+//   }
+// }
+
+// .description {
+//   width: 100%;
+//   margin: 35px 0 0 0;
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .intelligence {
+//   width: 880/1366 * 100%;
+//   display: flex;
+//   flex-direction: column;
+
+//   &__section {
+//     width: 800/880 * 100%;
+//     margin: 45px 0 0 0; 
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+
+//     &_right-side {
+//       align-self: flex-end;
+//     }
+
+//     &_decoration {  
+//       position: relative;
+
+//       &::before {
+//         content: '';
+//         display: block;
+//         width: 75px;
+//         height: 50px;
+//         background: url('../img/bg_pan.png') center / cover no-repeat;
+//         position: absolute;
+//         top: -12%;
+//         left: 70%;
+//       }
+
+//       &::after {
+//         content: '';
+//         display: block;
+//         width: 55px;
+//         height: 55px;
+//         background: url('../img/bg_cup.png') center / cover no-repeat;
+//         position: absolute;
+//         bottom: 12%;
+//         left: 90%;
+//       }
+//     }
+//   }
+
+//   &__article {
+//     width: 690/800 * 100%;
+//   }
+
+//   &__title {
+//     @include font-roboto(20px, $color-1, 400);
+//   }
+
+//   &__text {
+//     @include font-roboto(16px, $color-2, 300, 1.55);
+//     margin: 10px 0 0 0;
+
+//     &_strong {
+//       max-width: 485px;
+//       @include font-roboto(16px, $color-2, 400);
+//       position: relative;
+
+//       &::before {
+//         content: '*';
+//         position: absolute;
+//         top: -6%;
+//         left: -2%;
+//       }
+
+//       &::after {
+//         content: '';
+//         display: block;
+//         width: 40px;
+//         height: 60px;
+//         background: url('../img/bg_baby-bottle.png') center / cover no-repeat;
+//         position: absolute;
+//         top: 25%;
+//         right: -8%;
+//       }
+//     }
+//   }
+
+//   &__link {
+//     @include font-roboto(16px, $color-2, 300);
+//     text-decoration: underline;
+
+//     &:hover {
+//       color: $color-12;
+//     }
+//   }
+
+//   &__background {
+//     width: 90px;
+//     height: 70px;
+//     background: url('../img/bg_eco.png') center / cover no-repeat;
+
+//     &_eco {
+
+//     }
+
+//     &_family {
+//       background-image: url('../img/bg_family.png');
+//     }
+
+//     &_like {
+//       background-image: url('../img/bg_like.png');
+//     }
+//   }
+// }
+
+// .documentation {
+//   cursor: pointer;
+//   width: 460/1366 * 100%;
+//   margin: 35px 0 0 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   &__title {
+//     @include font-roboto(20px, $color-1, 400);
+//   }
+
+//   &__background {
+//     margin: 45px 0 0 0;
+//     width: 460/460 * 100%;
+//     padding-bottom: 370/460 * 100%;
+//     background: url('../img/bg_documentation.png') center / contain no-repeat;
+//   }
+
+// }
+
+
+
+// //<!-- Bid -->
+// .bid {
+//   margin: 190px 0 0 0;
+//   box-shadow: 0 0 10px rgba($color-4, .5);
+//   background: url('../img/bg_chemical.png') center / contain repeat $color-3;
+// }
+
+// .appeal {
+//   display: flex;
+//   justify-content: center;
+//   padding: 25px 0 85px 0;
+//   position: relative;
+
+//   &__background {
+//     width: 490/1366 * 100%;
+//     padding-bottom: 490/1366 * 100%;
+//     background: url('../img/bg_pump.png') center / cover no-repeat;
+//     position: absolute;
+
+//     &_bottles {
+//       top: -70px;
+//       left: 70px;
+//     }
+
+//     &_jug {  
+//       width: 235/1366 * 100%;
+//       padding-bottom: 275/1366 * 100%;
+//       background-image: url('../img/bg_jug.png');
+//       top: 90px;
+//       right: 90px;
+//     }
+//   }
+// }
+
+// .handling {
+//   width: 355px;
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+
+//   &__title {
+//     @include font-roboto(32px, $color-1, 300); 
+//   }
+
+//   &__subtitles {
+//     width: 100%;
+//     margin: 35px 0 0 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   &__subtitle {
+//     @include font-roboto(22px, $color-2, 300);
+
+//     &_left {
+//       align-self: flex-start;
+//     }
+
+//     &_right {
+//       align-self: flex-end;
+//     }
+//   }
+
+//   &__form {
+//     margin: 30px 0 0 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-end;    
+//   }
+
+//   &__contact {
+//     margin: 5px 0 0 0;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+//   }
+
+//   &__label {
+//     @include font-roboto(15px, $color-2, 400);
+//   }
+
+//   &__input {
+//     @extend %default_input;
+//     @include font-roboto(15px, $color-2, 400);
+//     width: 140px;
+//     padding: 3px 0 3px 10px;
+//     border: 1px solid $color-8;
+//   }
+
+//   &__buttons {
+//     margin: 5px 0 0 0;
+//   }
+
+//   &__button {
+//     @extend %default_button;
+//     @include font-roboto(17px, $color-3, 300);
+//     background-color: $color-9;
+//     padding: 0 34px; 
+//   }
+// }
+
+
+
+// // <!-- Schedule -->
+// .schedule {
+//   margin: 50px 0 0 0;
+// }
+
+// .service {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   &__title {
+//     @include font-roboto(30px, $color-1, 300);
+//   }
+
+//   &__subheading {
+//     margin: 45px 0 0 0;
+//     @include font-roboto(20px, $color-2, 300);
+//   }
+// }
+
+// .condition {
+//   margin: 40px 0 0 0;
+//   width: 1000/1366 * 100%;
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .booking {
+//   width: 250/1000 * 100%;
+
+//   &__title {
+//     @include font-roboto(20px, $color-2, 300);
+//     text-align: center;
+//     padding: 0 55px 15px 55px;
+//     border-bottom: 1px solid rgba($color-2, 0.45);
+//   }
+// }
+
+// .acceptance {
+//   margin: 30px 0 0 0;
+//   width: 100%;
+
+//   &__title {
+//     @include font-roboto(17px, $color-2, 600); 
+//   }
+
+//   &__item { 
+//     @include font-roboto(17px, $color-2, 300, 1.2); 
+
+//     &_remark {
+//       position: relative;
+//       &::before {
+//         content: '*';
+//         @include font-roboto(17px, $color-2, 400); 
+//         position: absolute;
+//         top: -5px;
+//         left: -10px;
+//       }
+//     }
+
+//     &:nth-of-type(odd) {
+//       margin: 15px 0 0 0;
+//     }
+
+//     &:nth-of-type(5) {
+//       margin: 35px 0 0 0;
+//     } 
+
+//     &:last-of-type {
+//       margin: 0;
+//     }
+//   }
+
+//   &__link {
+//     @include font-roboto(17px, $color-2, 300); 
+//     text-decoration: underline;
+
+//     &:hover {
+//       color: $color-12;
+//     }
+//   }
+// }
+
+// .delivery {
+//   width: 580/1000 * 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   &__title {   
+//     @include font-roboto(20px, $color-2, 300);
+//     text-align: center;
+//     padding: 0 55px 15px 55px;
+//     border-bottom: 1px solid rgba($color-2, 0.45);
+//   }
+// }
+
+// .occurrence {
+//   width: 100%;
+//   margin-top: 30px;
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .locality {
+
+//   &__title {
+//     @include font-roboto(17px, $color-2, 600);
+//   }
+
+//   &__item {
+//     @extend .acceptance__item;
+
+//     &:last-of-type {
+//       margin: 35px 0 0 0;
+//     }
+//   }
+// }
+
+
+
+// // <!-- Footer -->
+// .footer {
+//   margin: 70px 0 0 0;
+//   padding: 30px 0; 
+//   background-color: $color-12;
+
+//   flex: 0 0 auto;
+// }
+
+// .coordinates {
+//   border-top: 1px solid $color-3;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 10px 20px 0 20px;
+// }
+
+// .creator {
+//   width: 245px;
+ 
+//   &__title {
+//     @include font-roboto(16px, $color-3, 300);
+//     border-bottom: 1px solid $color-3;
+//     padding: 0 0 10px 25px;
+//   }
+  
+//   &__list {
+//     &_communications {
+//       margin: 10px 0 0 0;
+//     }
+//   }
+
+//   &__item {
+//     @include font-roboto(14px, $color-3, 400, 1.5);
+
+//     &_communications {
+//       margin: 10px 0 0 0;
+
+//       &:first-of-type {
+//         margin: 0;
+//       }
+//     }
+//   }
+
+//   &__links {
+//     margin: 10px 0 0 0;
+//   }
+
+//   &__link {
+//     @include font-roboto(14px, $color-3, 400);
+//     display: flex;
+//     align-items: center;
+
+//     &::before {
+//       content: '';
+//       display: block;
+//       width: 15px;
+//       height: 17px;
+//       background: url('../img/bg_geo.png') center / cover no-repeat;
+//       margin: 0 10px 0 0;
+//     }
+
+//     &_tel {
+//       &::before {
+//         background-image: url('../img/bg_telephone.png');
+//       }
+//     }
+
+//     &_mail {
+//       &::before {
+//         width: 20px;
+//         height: 15px;
+//         background-image: url('../img/bg_mail.png');
+//         background-size: 20px 15px;
+//         margin: 0 5px 0 0;
+//       }
+//     }
+//   }
+// }
+
+// .supply {
+//   width: 415px;
+
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .copyright {
+//   width: 192px;
+
+//   &__social {
+//     margin: 20px 0 0 0;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__link {
+//     display: block;
+//     width: 25px;
+//     height: 25px;
+//     transition: color .25s ease;
+//     color: $color-3;
+
+//     &:hover {
+//       color: $color-1;
+//     }
+//   }
+
+//   &__svg {
+//     fill: currentColor;
+//   }
+
+//   &__text {
+//     @include font-roboto(14px, $color-3, 400);
+//   }
+// }
+
+// .delivery-service {
+
+//   display: flex;
+//   flex-direction: column;
+
+//   &__title {
+//     align-self: flex-end;
+//     @include font-roboto(14px, $color-3, 300);
+//   }
+
+//   &__list {
+//     margin: 20px 0 0 0;
+//   }
+
+//   &__item {
+//     margin: 10px 0 0 0;
+
+//     &:first-of-type {
+//       margin: 0;
+//     }
+//   }
+
+//   &__link {
+//     @include font-roboto(21px, $color-3, 400);
+//     display: flex;
+//     align-items: center;
+
+//     &::before {
+//       content: '';
+//       display: block;
+//       width: 25px;
+//       height: 25px;
+//       background: url('../img/bg_mts.png') center / cover no-repeat;
+//       margin: 0 10px 0 0;
+//     }
+
+//     &_kyivstar {
+//       &::before {
+//         background-image: url('../img/bg_kyivstar.png');
+//       }
+//     }
+
+//     &_life {
+//       &::before {
+//         background-image: url('../img/bg_life.png');
+//       }
+//     }
+//   }
+// }
+
+
+//pages
+// @import "page-about";
+// @import "page-delivery";
+// @import "page-contact";
+
+//style of components
+// @import "go-up";
+// @import "humburger";
+// @import "blind";
+// @import "popup";
+// @import "mobile-nav";
+// @import "input-validation";
+// @import "fotorama-custom";
+
+//media
+// @import "media-1280px";
+// @import "media-1024px";
+// @import "media-767px";

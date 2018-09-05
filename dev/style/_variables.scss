@@ -1,0 +1,47 @@
+//https://www.color-blindness.com/color-name-hue/
+
+$_allports:   	#19778a;
+$_dim-gray: 		#6e6a6a;
+$_dim-gray50:		rgba($_dim-gray, .5);
+$_mortar:				#575757;
+$_fire-brick: 	#b52121;
+$_kashmir-blue:	#52718e;
+$_downy:		  	#68c7c5;
+$_white: 				#fff;
+$_black: 				#000;
+$_lime-green: 	#26b72b;
+$_red: 					#f00;
+$_pattens-blue: #e1f4f7;
+$_viking:				#4faebd;
+
+
+$color-1: 	$_allports;
+$color-2: 	$_dim-gray;
+$color-3: 	$_white;
+$color-4:		$_black;
+$color-5: 	$_fire-brick;
+$color-6: 	$_pattens-blue;
+$color-7: 	$_mortar;
+$color-8: 	$_dim-gray50;
+$color-9: 	$_downy;
+$color-10: 	$_red;
+$color-11: 	$_lime-green;
+$color-12: 	$_viking;
+$color-13:	$_kashmir-blue;
+
+
+
+// $color-brand:   $_blue;
+// $color-link:    $_blue;
+// $color-error:   $_red;
+// $color-warning: $_yellow;
+// $color-primary:			$_allports;
+// $color-secondary: 	$_dim-gray;
+// $color-tertiary:		$_white;
+// $color-important: 	$_fire-brick;
+// $color-link:		  	$_kashmir-blue;
+// $color-link:		  	$_kashmir-blue;
+// $color-button:			$_downy;
+// $color-placeholder: $_dim-gray50;
+// $color-valid: 			$_lime-green;
+// $color-invalid: 		$_red;

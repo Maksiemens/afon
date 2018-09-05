@@ -1,0 +1,458 @@
+@media (max-width: 767px) {
+
+  .header {
+    width: 100%; 
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 500;
+    padding: 0;
+  }
+
+  .header-desktop {
+    display: none;
+  }
+
+  .header-mobile {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+    max-width: 100%;
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      padding: 15px 20px;
+      border-bottom: 1px solid $color-3;
+    }
+  }
+
+  .intro {
+    margin: 85px 0 0 0;
+  }
+ 
+  .opening {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 100%;
+
+    &__titles {
+      &::after {
+        top: -30px;
+        right: 0;
+      }
+    }
+
+    &__title {
+      @include font-tahoma(54px, $color-3, 500); 
+
+      &_size-l {
+        @include font-tahoma(44px, $color-3, 500); 
+      }
+    }
+  }
+
+  .order {
+    margin: 35px 0 0 0;
+  }
+
+  .registration {
+    max-width: 295px;
+
+    &__residential {
+      width: 287px;
+    }
+
+    &__input {
+      width: 225px;
+
+      &_size-l {
+        width: 60px;
+      }
+    }
+  }
+
+  .calculation {
+    &__form {
+      width: 100%;
+    }
+  }
+
+  .manual {
+
+    &__title {
+      text-align: center;
+    }
+
+    &__text {
+      width: 100%;
+    }
+  }
+
+  .instruction {
+    margin: 50px 0 0 0;
+  }
+
+  .cards {
+    margin: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin: 10px 0 0 0;
+
+    &:nth-of-type(even) .card__background {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .next-step {
+    margin: 20px 0 0 0;
+    transform: rotate(90deg);
+
+    &:nth-of-type(2) {
+      display: block;
+    }
+  } 
+ 
+  .specification {
+    margin: 50px 0 0 0;
+  }
+
+  .choice {
+
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .intelligence {
+
+    &__section {
+      flex-direction: column;
+
+      &_decoration {  
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &__article {
+      width: 100%;
+    }
+
+    &__text {
+
+      &_strong {
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  .documentation {
+    width: 100%;
+    max-width: 450px;
+  
+    &__buttons {
+      width: 55%;
+      max-width: 200px;
+    }
+  }
+
+  .bid {
+    margin: 50px 0 0 0;
+  }
+
+  .appeal {
+    padding: 20px 0;
+
+    &__background {
+      display: none;
+    }
+  }
+
+  .handling {
+    width: 100%;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitles {
+      margin: 20px 0 0 0;
+    }
+
+    &__subtitle {
+      text-align: center;
+    
+      &_left {
+        align-self: center;
+      }
+
+      &_right {
+        align-self: center;
+      }
+    }
+  }
+
+  .condition {
+    margin: 20px 0 0 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .occurrence {
+    margin: 15px 0 0 0;
+    flex-direction: column;
+  }
+
+  .locality {
+    
+    &:first-of-type {
+      margin: 0;
+    }
+
+    margin: 15px 0 0 0;
+
+    &__list {
+
+    }
+
+    &__item {
+
+      &:last-of-type {
+        margin: 15px 0 0 0;
+      }
+        
+    }
+
+  }
+
+  .booking {
+    width: 100%;
+  }
+
+  .acceptance {
+    margin: 15px 0 0 0;
+  }
+
+  .delivery {
+    width: 100%;
+    margin: 20px 0 0 0;
+
+    &__title {
+      width: 100%;
+    }
+  }
+
+  //<!-- Footer -->
+  .coordinates {
+    flex-direction: column;
+    padding: 10px 0 0 0;
+  }
+
+  .creator {
+
+  }
+  
+  .supply {
+    width: 245px;
+    flex-direction: column;
+  }
+
+  .copyright {
+    margin: 30px 0 0 0;
+  }
+
+  .delivery-service {
+    margin: 30px 0 0 0;
+
+    &__title {
+      align-self: flex-start;
+    }
+  }
+  
+
+
+
+
+  //page-about
+  .brand {
+    margin: 70px 0 0 0;
+  }
+
+  .characterization {
+
+    &__title {
+      @include font-tahoma(39px, $color-3, 500);
+    }
+  }
+
+  .composition {
+    margin: 50px 0 0 0;
+  }
+
+  .standards {
+
+    &__text {
+      margin: 40px 0 0 0;
+    }
+  }
+  
+  .definition {
+   
+    &__category {
+      width: 100%;
+   
+      &_reward {
+       
+        &::after {
+          content: '';
+          display: none;
+        }
+      }
+    }
+  }
+
+  .table {
+   
+    &__head {
+      display: none;
+    }
+  
+    &__title {
+      @include font-roboto(15px, $color-1, 400);
+      text-align: left;		
+  
+      &_side-left {
+        padding: 0;
+      }
+    }
+  
+    &__row {
+      display: block;
+      margin: 10px 0 0 0;
+
+      &:first-of-type {
+        margin: 0;
+      }
+    }
+  
+    &__name {
+      width: 100%;
+      padding: 5px 0;
+      @include font-roboto(14px, $color-2, 300);
+      display: block;
+      text-align: right;
+      border-bottom: 1px dotted $color-2;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        @include font-roboto(14px, $color-1, 400);
+      }
+    }
+  
+    &__rule {
+
+    }
+  
+    &__brand {
+     
+    }
+  }
+
+
+
+
+
+  //page-delivery
+  .conveyance {
+    margin: 70px 0 0 0;
+  }
+
+  .partnership {
+    width: 100%;
+  }
+
+  .assignment {
+    flex-direction: column;
+
+    &__list {
+      margin: 15px 0 0 0;
+
+      &:first-of-type {
+        margin: 0;
+      }      
+    }
+  }
+
+  .location {
+    flex-direction: column;
+
+    &__list {
+      margin: 15px 0 0 0;
+
+      &:first-of-type {
+        margin: 0;
+      }      
+    }
+  }
+
+
+
+
+  //page-contacts
+  .contact {
+    margin: 70px 0 0 0;
+  }
+
+  .liaison {
+    width: 90%;
+    min-width: auto;
+    flex-direction: column;
+  }
+
+  .transport {
+    width: 100%;
+  }
+
+  .manufacturer {
+    margin: 30px 0 0 0;
+  }
+
+
+
+
+  //go-up
+  .go-up {
+    &__button {
+      width: 30px;
+      height: 30px;  
+    }
+  }
+
+
+}
