@@ -1,53 +1,27 @@
 //PTSerif
 @font-face {
-	font-family: 'PTSerif';
-	src: url('../fonts/PTSerif/PTSerif_Regular.eot');
-	src: url('../fonts/PTSerif/PTSerif_Regular.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/PTSerif/PTSerif_Regular.woff2') format('woff2'),
-			 url('../fonts/PTSerif/PTSerif_Regular.woff') format('woff'),
-			 url('../fonts/PTSerif/PTSerif_Regular.ttf') format('truetype'),
-			 url('../fonts/PTSerif/PTSerif_Regular.svg#PTSerif_Regular') format('svg');
+	font-family: 'PT Serif';
+	src: url('../fonts/PTSerif/PTSerif-Regular.eot');
+	src: url('../fonts/PTSerif/PTSerif-Regular.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/PTSerif/PTSerif-Regular.woff2') format('woff2'),
+			url('../fonts/PTSerif/PTSerif-Regular.woff') format('woff'),
+			url('../fonts/PTSerif/PTSerif-Regular.ttf') format('truetype'),
+			url('../fonts/PTSerif/PTSerif-Regular.svg#PTSerif-Regular') format('svg');
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'PTSerif';
-	src: url('../fonts/PTSerif/PTSerif_Bold.eot');
-	src: url('../fonts/PTSerif/PTSerif_Bold.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/PTSerif/PTSerif_Bold.woff2') format('woff2'),
-			 url('../fonts/PTSerif/PTSerif_Bold.woff') format('woff'),
-			 url('../fonts/PTSerif/PTSerif_Bold.ttf') format('truetype'),
-			 url('../fonts/PTSerif/PTSerif_Bold.svg#PTSerif_Bold') format('svg');
+	font-family: 'PT Serif';
+	src: url('../fonts/PTSerif/PTSerif-Bold.eot');
+	src: url('../fonts/PTSerif/PTSerif-Bold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/PTSerif/PTSerif-Bold.woff2') format('woff2'),
+			url('../fonts/PTSerif/PTSerif-Bold.woff') format('woff'),
+			url('../fonts/PTSerif/PTSerif-Bold.ttf') format('truetype'),
+			url('../fonts/PTSerif/PTSerif-Bold.svg#PTSerif-Bold') format('svg');
 	font-weight: 700;
 	font-style: normal;
 }
-
-@font-face {
-	font-family: 'PTSerif';
-	src: url('../fonts/PTSerif/PTSerif_Regular_Italic.eot');
-	src: url('../fonts/PTSerif/PTSerif_Regular_Italic.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/PTSerif/PTSerif_Regular_Italic.woff2') format('woff2'),
-			 url('../fonts/PTSerif/PTSerif_Regular_Italic.woff') format('woff'),
-			 url('../fonts/PTSerif/PTSerif_Regular_Italic.ttf') format('truetype'),
-			 url('../fonts/PTSerif/PTSerif_Regular_Italic.svg#PTSerif_Regular_Italic') format('svg');
-	font-weight: 400;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'PTSerif';
-	src: url('../fonts/PTSerif/PTSerif_Bold_Italic.eot');
-	src: url('../fonts/PTSerif/PTSerif_Bold_Italic.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/PTSerif/PTSerif_Bold_Italic.woff2') format('woff2'),
-			 url('../fonts/PTSerif/PTSerif_Bold_Italic.woff') format('woff'),
-			 url('../fonts/PTSerif/PTSerif_Bold_Italic.ttf') format('truetype'),
-			 url('../fonts/PTSerif/PTSerif_Bold_Italic.svg#PTSerif_Bold_Italic') format('svg');
-	font-weight: 700;
-	font-style: italic;
-}
-
-
 
 //SegoeUI
 @font-face {
