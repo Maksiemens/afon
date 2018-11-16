@@ -30,7 +30,11 @@ body {
   // }
 }
 
-.page { }
+.page { 
+  // background-color: #fff;
+
+
+}
 
 .container {
   max-width: 1205px;
@@ -47,20 +51,21 @@ body {
   padding: 20px 0 285px 0;
   background: url('../img/bg_header.png') no-repeat center center / cover fixed;
   position: relative;
-  overflow: hidden;
+
+
+  @include for-tablet-portrait-up {
+    background: url('../img/bg_header.png') no-repeat center center / cover;
+  }
 
   &::before {
     content: '';
     display: block;
     width: 770px;
     height: 200px;
-    background: url('../img/bg_cloud_101.png') no-repeat center top / cover;
+    background: url('../img/bg_cloud_12.png') no-repeat center top / cover;
     position: absolute;
     bottom: -50px;
-    // animation: animatedBackground 40s linear infinite alternate;
-    // animation: animatedTranslate 60s infinite linear alternate;
-    // animation: animatedBackground 10s linear infinite alternate;
-    animation: animatedTranslate 30s linear infinite alternate;
+    animation: animatedTranslate 80s linear infinite alternate;
   }
 
   &::after {
@@ -68,24 +73,12 @@ body {
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_100.png') repeat-x center top / auto;
+    background: url('../img/bg_cloud_11.png') repeat-x center top / auto;
     position: absolute;
     bottom: -30px;
-    // animation: animatedBackground 40s linear infinite alternate;
   }
 
-  // &::before {
-  //   content: "";
-  //   display: block;
-  //   position: fixed;
-  //   left: 0;
-  //   top: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: -1;
-  //   background: url('../img/bg_header.png') no-repeat center center /cover;
-  // }
-
+ 
   @include for-tablet-portrait-up {
     padding: 20px 0 200px 0;
   }
@@ -103,10 +96,11 @@ body {
   .logo {
 
     &__link {
+      @extend %outline-custom;
       display: block;
       width: 110px;
       height: 90px;
-      background: url('../img/bg_logo_2.png') no-repeat center center / contain;
+      background: url('../img/bg_logo.png') no-repeat center center / contain;
     }
   }
 
@@ -117,17 +111,30 @@ body {
     justify-content: space-between;
     align-items: center;
 
+
     @include for-tablet-portrait-up {
       margin-top: 25px;
-      // flex-direction: column;
     }
   
     &__link {
-      // @include font-secondary(16px, $color-1, 400);
+      @extend %outline-custom;
+
+      &:hover {
+
+        .call__text {
+          color: $color-2;
+        }
+
+        .call__text_colored {
+          color: $color-1;
+        }
+      }
     }
   
     &__text {
       @include font-secondary(21px, $color-1, 600);
+      transition: 0.5s color;
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(15px, $color-1, 600);
@@ -136,6 +143,7 @@ body {
       &_colored {
         @include font-secondary(21px, $color-2, 400);
 
+
         @include for-tablet-portrait-up {
           @include font-secondary(15px, $color-2, 400);
         }
@@ -143,6 +151,7 @@ body {
     }
   
     &__button {
+      @extend %outline-custom;
       @extend %reset_button;
       @include font-secondary(16px, $color-1, 400);
       border-radius: 23px;
@@ -155,6 +164,7 @@ body {
         border: 1px solid transparent;
       }
 
+
       @include for-tablet-portrait-up {
         @include font-secondary(14px, $color-1, 400);
         padding: 10px 15px;
@@ -165,6 +175,7 @@ body {
 
 .header-center {
   margin-top: 100px;
+
 
   @include for-tablet-portrait-up {
     margin-top: 35px;
@@ -183,6 +194,7 @@ body {
         margin-top: 15px;
         @include font-primary(169px, $color-1, 700);
 
+
         @include for-tablet-landscape-up {
           @include font-primary(118px, $color-1, 700);
         }
@@ -195,6 +207,7 @@ body {
       &_size-m {
         @include font-primary(38px, $color-1, 700);
 
+
         @include for-tablet-portrait-up {
           @include font-primary(19px, $color-1, 700);
         }
@@ -204,6 +217,7 @@ body {
         margin-top: 20px;
         @include font-primary(21px, $color-1, 400);
         text-transform: none;
+
 
         @include for-tablet-portrait-up {
           @include font-primary(16px, $color-1, 400);
@@ -216,6 +230,7 @@ body {
     margin-top: 55px;
   
     &__button {
+      @extend %outline-custom;
       @extend %reset_button;
       @include font-secondary(19px, $color-1, 400);
       background-color: $color-10;
@@ -247,28 +262,13 @@ body {
 
 
 .dates {
-  // position: relative;
-  // z-index: 500;
   padding: 0 0 100px 0;
   background: url('../img/bg_dates.png') no-repeat -14% 100% / auto;
 
+
   @include for-tablet-portrait-up {
     padding: 0 0 20px 0;
-    // background: url('../img/bg_dates.png') no-repeat 175% 100% / auto;
   }
-  
-  // &::after {
-  //   content: '';
-  //   display: block;
-  //   width: 100%;
-  //   height: 200px;
-  //   background: url('../img/bg_cloud_100.png') repeat center bottom / auto;
-    
-  //   position: absolute;
-  //   bottom: -185px;
-  //   animation: animatedBackground 40s linear infinite alternate;
-  //   transform: rotate(180deg);
-  // }
   
   .heading {
     display: flex;
@@ -282,6 +282,7 @@ body {
       width: 1px;
       height: 130px;
       background-color: $color-14;
+
 
       @include for-tablet-portrait-up {
         height: 65px;
@@ -316,9 +317,11 @@ body {
     }
 
     &__link {
+      @extend %outline-custom;
       @include font-secondary(20px, $color-15, 600);
       border-bottom: 2px dashed transparent;
       padding-bottom: 2px; 
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(18px, $color-15, 600);
@@ -328,6 +331,7 @@ body {
         @include font-secondary(20px, $color-10, 600);
         border-bottom: 2px dashed $color-10;
         padding-bottom: 2px; 
+
 
         @include for-tablet-portrait-up {
           @include font-secondary(18px, $color-10, 600);
@@ -351,37 +355,24 @@ body {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
 
+
     @include for-desktop-up {
       grid-template-columns: repeat(2, 270px);
       grid-template-rows: repeat(4, minmax(250px, 1fr));
       justify-content: center;
     }
-    
-    // @include for-tablet-portrait-up {
-    //   grid-template-columns: repeat(2,  270px);
-    //   grid-template-rows: repeat(5, minmax(250px, 1fr));
-    //   justify-content: center;
-    // }
 
     @include for-tablet-portrait-up {
-      // margin-top: 20px;
       grid-template-columns: repeat(1, 270px);
       grid-template-rows: repeat(6, 1fr);
-      // grid-column-gap: 0;
       justify-content: center;
     }
-
-  
-
-
   }
 
   .trip { 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 250px;
-    // padding: 119px 30px 30px 30px;
     padding: 30px;
     border-radius: 10px;
 
@@ -390,24 +381,18 @@ body {
     &:nth-of-type(1) {
       grid-column: 1 / 3;
       grid-row: 1 / 3;
-      background: url('../img/bg_trips_6.png') no-repeat center / cover;
+      background: url('../img/bg_trips_1.png') no-repeat center / cover;
 
-      @include for-desktop-up { }
 
       @include for-tablet-portrait-up {
         grid-column: 1;
       }
-
-      // @include for-tablet-portrait-up {
-
-      // }
-
     }
   
     &:nth-of-type(2) {
       grid-column: 3;
       grid-row: 1 / 2;
-      background: url('../img/bg_trips_7.png') no-repeat center / cover;
+      background: url('../img/bg_trips_2.png') no-repeat center / cover;
 
       @include for-desktop-up {
         grid-column: 1;
@@ -418,18 +403,13 @@ body {
         grid-column: 1;
         grid-row: 3 / 4;
       }
-
-      // @include for-tablet-portrait-up {
-      //   grid-column: 1 / 2;
-      //   grid-row: 3;
-      // }
-
     }
   
     &:nth-of-type(3) {
       grid-column: 3;
       grid-row: 2 / 3;
-      background: url('../img/bg_trips_8.png') no-repeat center / cover;
+      background: url('../img/bg_trips_3.png') no-repeat center / cover;
+
 
       @include for-desktop-up {
         grid-column: 1;
@@ -439,19 +419,14 @@ body {
       @include for-tablet-portrait-up {
         grid-column: 1;
         grid-row: 4 / 5;
-      }
-
-      // @include for-tablet-portrait-up {
-      //   grid-column: 2 / 3;
-      //   grid-row: 3;
-      // }
-
+      }  
     }
   
     &:nth-of-type(4) {
       grid-column: 4;
       grid-row: 1 / 3;
-      background: url('../img/bg_trips_9.png') no-repeat center / cover;
+      background: url('../img/bg_trips_4.png') no-repeat center / cover;
+
 
       @include for-desktop-up {
         grid-column: 2;
@@ -462,12 +437,6 @@ body {
         grid-column: 1;
         grid-row: 5 / 7;
       }
-
-      // @include for-tablet-portrait-up {
-      //   grid-column: 1;
-      //   grid-row: 4 / 6;
-      // }
-
     }
   
     &__title {
@@ -486,10 +455,6 @@ body {
   
     &__text {
       @include font-secondary(14px, $color-1, 400, 21px);
-  
-      &_strong {
-        // @include font-secondary(14px, $color-20, 600, 21px);
-      }
     }  
   }
 }
@@ -501,48 +466,34 @@ body {
   background: $gradient-1;
   position: relative;
 
+
   @include for-tablet-portrait-up {
     padding: 100px 0 165px 0;
   }
-
-
   
   &::before {
     content: '';
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_100.png') repeat center bottom / auto;
+    background: url('../img/bg_cloud_11.png') repeat center bottom / auto;
     
     position: absolute;
-    // bottom: -185px;
     top: -1px;
-    animation: animatedBackground 40s linear infinite alternate;
+    animation: animatedBackground 80s linear infinite alternate;
     transform: rotate(180deg);
   }
-
   
   &::after {
     content: '';
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_100.png') repeat center top / auto;
+    background: url('../img/bg_cloud_11.png') repeat center top / auto;
     position: absolute;
     bottom: -30px;
-    animation: animatedBackground 40s linear infinite alternate;
-  
+    animation: animatedBackground 80s linear infinite alternate;
   }
-
-
-  
-
-    
-
-
-
-
-
 
   .heading {
     display: flex;
@@ -569,211 +520,69 @@ body {
       margin-top: 10px;
       @include font-primary(40px, $color-1, 700);
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-1, 700);
-      }
-
-
       &_size-s {
         @include font-secondary(13px, $color-4, 400);
         text-transform: uppercase;
+      }
+
+
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-1, 700);
       }
     }
   }
   
   .content {
     margin-top: 45px;
-
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-
-
     display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(270px, auto));
-
- 
-
-    // grid-template-columns: minmax(auto, 470px) 1fr;
-     grid-template-columns: minmax(290px, 470px) 1fr;
-    // grid-template-columns: 470px 1fr;
+    grid-template-columns: minmax(290px, 470px) 1fr;
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 55px;
     grid-row-gap: 30px;
     justify-content: center;
     align-items: center;
-    // align-content: center;
-
-
-
-    position: relative;
-    z-index: 500;
-
-
-
-    @include for-desktop-up {
-      // flex-direction: column;
-    }
 
 
     @include for-tablet-landscape-up {
       margin-top: 30px;
       grid-template-columns: minmax(280px, 470px);
       grid-template-rows: 265px 1fr;
-      // flex-direction: column;
-     
     }
-
   }
 
   .videos {
-    // width: 40%;
-
-    // display: grid;
     position: relative;
-
-    // width: 100%;
-    // height: 100%;
-
-
-
-    // display: flex;
-
-    
-    // display: grid;
-    // grid-template-columns: repeat(1, minmax(270px, auto));
-    // grid-template-rows: repeat(1, minmax(270px, auto));
-    // grid-column-gap: 55px;
-    // // grid-row-gap: 30px;
-    // align-items: center;
-    // // align-content: center;
-
-    
-    
-
-    @include for-desktop-up {
-      // width: 40%;
-    }
-
-    @include for-tablet-portrait-up {
-      // width: 85%;
-
-
-    }
-
-
       
     .cloud {
-      
-      width: 60%;
-      padding-bottom: 40%;
-
-
       width: 150%;
       padding-bottom: 100%;
-
-
       background: url('../img/bg_cloud_10.png') no-repeat center center / cover;
-      // width: 690px;
-      // height: 475px;
       position: absolute;
-      // top: 130px;
-      // left: -220px;
-      // transform: translate(-20%, -20%);
-      // animation: slideInDown 2s linear 6s;
-      // display: none;
-
       top: -40%;
       left: -35%;
-    
 
-
-      @include for-desktop-up {
-
-      }
-
-      @include for-tablet-landscape-up {
-    
-        // transform: translate(0%, -20%);
-      }
 
       @include for-tablet-portrait-up {
         width: 100%;
         top: -25%;
         left: 0%;
-      
       }
-
     }
-
-
-
-
-
- 
-    // &::before {
-    //   content: '';
-    //   display: block;
-    //   width: 150%;
-    //   padding-bottom: 100%;
-    //   background: url('../img/bg_cloud_10.png') no-repeat center center / cover;
-    //   // width: 690px;
-    //   // height: 475px;
-    //   position: absolute;
-    //   transform: translate(-20%, -20%);
-    //   animation: slideInDown 2s linear 6s;
-
-
-    //   @include for-desktop-up {
-  
-    //   }
-
-    //   @include for-tablet-landscape-up {
-    //     width: 100%;
-    //     transform: translate(0%, -20%);
-    //   }
- 
-    //   @include for-tablet-portrait-up {
-       
-    //   }
-
-    // }
-
-   
-
-
-
-
   }
 
   .video {
     width: 100%;  
     height: 265px;
-    // padding-bottom: 57%;  
-    background: url('../img/bg_service2.png') no-repeat center center / cover;
+    background: url('../img/bg_service.png') no-repeat center center / cover;
     position: relative;  
     overflow: hidden;
     box-shadow: 0 26px 49px $color-29;
     border-radius: 10px;
-    // width: 470px;
-    // height: 265px;
     grid-column: 1 / 2;
     grid-row: 1 / 2 ;
 
-    @include for-desktop-up {
-  
-    }    
-
-    @include for-tablet-portrait-up {
-      // width: 100%;  
-      // padding-bottom: 57%;  
-      // height: auto;
-
-      // grid-column: 1;
-      // grid-row: 5 / 7;
-    }
-
     &__button {
+      @extend %outline-custom;
       @extend %reset_button;
       @extend %button-play-video;
     }
@@ -784,31 +593,17 @@ body {
   }
 
   .description {
-    // width: 50%;
-    // max-width: 645px;
 
     &__text {
+
       &:first-of-type {
         margin-top: 0;
       }
+
       margin-top: 15px;
       @include font-secondary(17px, $color-7, 400, 26px);
     }
-
-    @include for-desktop-up {
-      // margin-top: 45px;
-    }
-
-    
-    @include for-tablet-portrait-up {
-      // margin-top: 25px;
-  
-    }
-
-
   }
-
-
 }
 
 
@@ -832,24 +627,24 @@ body {
       height: 130px;
       background-color: $color-14;
 
+
       @include for-tablet-portrait-up {
         height: 65px;
       }
-
-
     }
 
     &__title {
       margin-top: 10px;
       @include font-primary(40px, $color-8, 700);
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-8, 700);
-      }
-
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
+      }
+
+
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-8, 700);
       }
     }
   }
@@ -857,17 +652,15 @@ body {
   .content {
     margin-top: 60px;
 
+
     @include for-tablet-portrait-up {
       margin-top: 30px;
     }
-
   }
 
   .cards {
     display: grid;
-    // grid-template-columns: repeat(4, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(270px, auto));
-    // grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     justify-items: center;
@@ -893,7 +686,9 @@ body {
     }
 
     @for $i from 2 through 8 {
+
       &_icon-#{$i} {
+
         &::before {
           background: url('../img/svg/card_icon-#{$i}.svg') no-repeat center / contain;
         }       
@@ -907,28 +702,14 @@ body {
   }
 }
 
-// &::before {
-//   content: '';
-//   display: block;
-//   width: 65px;
-//   height: 60px;
-//   background: url('../img/svg/card_icon-1.svg') no-repeat center / contain;
-// }
 
-// @for $i from 2 through 8 {
-//   &_icon-#{$i} {
-//     &::before {
-//       background: url('../img/svg/card_icon-#{$i}.svg') no-repeat center / contain;
-//     }       
-//   }
-// }
+
 
 
 
 .reviews {
   margin-top: 95px;
   background: url('../img/bg_reviews.png') no-repeat center 55% / cover;
-
   
   .heading {
     display: flex;
@@ -943,29 +724,31 @@ body {
       height: 130px;
       background-color: $color-14;
 
+
       @include for-tablet-portrait-up  {
         height: 65px;
       }
-
     }
 
     &__title {
       margin-top: 10px;
       @include font-primary(40px, $color-8, 700);
 
-      @include for-tablet-portrait-up  {
-        @include font-primary(26px, $color-8, 700);
-      }
-
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
+      }
+
+
+      @include for-tablet-portrait-up  {
+        @include font-primary(26px, $color-8, 700);
       }
     }
   }
 
   .content {
     margin-top: 55px;
+
 
     @include for-tablet-portrait-up {
       margin-top: 30px;
@@ -979,19 +762,16 @@ body {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
 
+
     @include for-desktop-up {
-      // grid-template-columns: repeat(2, 370px);
       grid-template-columns: repeat(2, minmax(210px, 370px));
       grid-template-rows: repeat(3, minmax(210px, 1fr)) 50px;
       justify-content: center;
     }
 
-
     @include for-tablet-portrait-up {
       grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(3, minmax(250px, 1fr)) 50px;
-
-      // grid-template-rows: minmax(250px, 1fr) minmax(250px, 1fr) minmax(250px, 1fr) 100px;
+      grid-template-rows: repeat(3, minmax(290px, 1fr)) 50px;
     }
   }
 
@@ -1004,9 +784,7 @@ body {
     &:nth-of-type(1) {
       grid-column: 1 / 3;
       grid-row: 1 / 3;   
-      
-      
-      @include for-desktop-up { }
+
 
       @include for-tablet-portrait-up {
         grid-column: 1;
@@ -1032,11 +810,11 @@ body {
     &:nth-of-type(3) {
       background: url('../img/bg_reviews_video-3.png') no-repeat center center / cover;
 
+
       @include for-desktop-up {
         grid-column: 2;
         grid-row: 3 / 4;  
       }
-
 
       @include for-tablet-portrait-up {
         grid-column: 1;
@@ -1047,7 +825,8 @@ body {
     &__button {
       @extend %reset_button;
       @extend %button-play-video;
-    }
+      @extend %outline-custom;
+    }   
 
     &__iframe {
       @extend %iframe-video;
@@ -1058,6 +837,7 @@ body {
     margin-top: 10px;
     grid-column: 1 / 4;
     justify-self: center;
+
 
     @include for-desktop-up {
       grid-column: 1 / 3;
@@ -1070,16 +850,19 @@ body {
     }
 
     &__link {
+      @extend %outline-custom;
       @include font-secondary(20px, $color-10, 400);
       border-bottom: 2px dashed $color-10;
       
+      &:hover {
+        border-bottom: 2px dashed transparent;
+      }
+
+
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-10, 400); 
       }
     }
-
-   
-
   }
 }
 
@@ -1090,24 +873,11 @@ body {
 .needs {
   padding: 100px 0 180px 0;
   background: url('../img/bg_needs.png') no-repeat 73% 70% / auto;
-  position: relative;
+
 
   @include for-tablet-portrait-up {
     padding: 70px 0 50px 0;
   }
-
-  // &::after {
-  //   content: '';
-  //   display: block;
-  //   width: 100%;
-  //   height: 200px;
-  //   background: url(../img/bg_cloud_100.png) repeat center bottom/auto;
-  //   position: absolute;
-  //   bottom: -185px;
-  //   z-index: 500;
-  //   animation: animatedBackground 40s linear infinite alternate;
-  //   transform: rotate(180deg);
-  // }
   
   .heading {
     display: flex;
@@ -1131,15 +901,15 @@ body {
       @include font-primary(40px, $color-25, 700);
       text-align: center;
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-25, 700);
-      }
-
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
-      }   
+      } 
 
+
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-25, 700);
+      }
     }
   }
 
@@ -1147,11 +917,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    // display: grid;
-    // grid-template-columns: repeat(1, 1fr);
-    // grid-template-rows: repeat(1, 1fr);
-    // grid-column-gap: 45px;  
   }
 
   .article {
@@ -1160,15 +925,12 @@ body {
     &__text {
       @include font-secondary(20px, $color-24, 400);
 
+
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-24, 400);
         text-align: center;
       }
-  
-
-    }
-
- 
+    } 
   }
 
   .form {
@@ -1176,43 +938,39 @@ body {
     width: 100%;
     max-width: 525px;
 
- 
-
-    // @include for-tablet-portrait-up {
-    //   display: flex;
-    //   flex-direction: column;
-    // }
-
-
     &__data {
       position: relative;
 
       &_email { }
 
+
       @include for-tablet-portrait-up {
         display: flex;
         flex-direction: column;
         align-items: center;
-
       }
     }
 
     &__input {
+      @extend %outline-custom;
       width: 62%;
       border-radius: 32px 0 0 32px;
       background-color: $color-1;
       border: 1px solid $color-9;
       padding: 18px 60px 18px 35px;
 
+
       @include font-secondary(19px, $color-8, 400);
 
       &::placeholder {
         @include font-secondary(19px, $color-18, 300);
 
+
         @include for-tablet-portrait-up {
           @include font-secondary(16px, $color-18, 300);
         }
       }
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-8, 400);
@@ -1220,17 +978,17 @@ body {
         border-radius: 32px;
         padding: 18px 35px;
       }
-
-
     }
 
     &__button {
+      @extend %outline-custom;
       @extend %reset_button;
       position: absolute;
       top: 0;
       right: 0;
       padding: 19px 35px;
       border-radius: 32px;
+      border: 1px solid transparent;
       background-color: $color-10;
       @include font-secondary(19px, $color-1, 400);
 
@@ -1238,6 +996,13 @@ body {
         position: absolute;
         top: 1px;
       }
+
+      &:hover {
+        @include font-secondary(19px, $color-10, 400);
+        background-color: $color-1;
+        border: 1px solid $color-9;
+      }
+
 
       @include for-tablet-portrait-up {
         margin-top: 15px;
@@ -1252,30 +1017,18 @@ body {
         }
       }
     }
-
-
   }
 }
 
 
 
 
-// .page {
-//   background-color: $color-3;
-// }
 
 .questions {
-  // position: relative;
-  // z-index: 500;
-  // margin-top: 215px;
-
-  background:
-  // url('../img/bg_cloud_1.png') no-repeat -10% 70%/auto,
-  // url('../img/bg_cloud_7.png') no-repeat 95% 35%/auto,
-  $gradient-1;
-
+  background: $gradient-1;  
   padding: 50px 0 200px 0; 
   position: relative;
+
 
   @include for-tablet-portrait-up {
     padding: 100px 0 200px 0; 
@@ -1286,24 +1039,23 @@ body {
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_100.png') repeat center bottom/auto;
+    background: url('../img/bg_cloud_11.png') repeat center bottom/auto;
     position: absolute;
     top: -1px;
     z-index: 500;
-    animation: animatedBackground 40s linear infinite alternate;
+    animation: animatedBackground 80s linear infinite alternate;
     transform: rotate(180deg);
   }
-  
 
   &::after {
     content: '';
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_100.png') repeat center top/auto;
+    background: url('../img/bg_cloud_11.png') repeat center top/auto;
     position: absolute;
     bottom: -30px;
-    animation: animatedBackground 40s linear infinite alternate;
+    animation: animatedBackground 80s linear infinite alternate;
   } 
 
   .heading {
@@ -1319,6 +1071,7 @@ body {
       height: 130px;
       background-color: $color-23;
 
+
       @include for-tablet-portrait-up {
         height: 65px;
       }
@@ -1326,15 +1079,16 @@ body {
 
     &__title {
       margin-top: 10px;
-      @include font-primary(40px, $color-1, 700);
-
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-1, 700);
-      }
+      @include font-primary(40px, $color-1, 700);   
 
       &_size-s {
         @include font-secondary(13px, $color-4, 400);
         text-transform: uppercase;
+      }
+
+
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-1, 700);
       }
     }
   }
@@ -1353,11 +1107,6 @@ body {
       grid-template-columns: repeat(1, minmax(auto, 555px));
       grid-template-rows: repeat(2, auto) 50px;
     }
-
-    @include for-tablet-portrait-up {
-      // grid-template-columns: repeat(1, 1fr);
-    }
-
   }
 
   .articles { }
@@ -1380,18 +1129,20 @@ body {
       border-bottom: 1px solid $color-6;
       transition: all 0.5s;
 
-      @include for-tablet-portrait-up {
-        @include font-secondary(16px, $color-22, 400, 18px);
-      }
-      
       &_active {
         @include font-secondary(22px, $color-1, 400);
         border-bottom: 1px solid transparent;
+
 
         @include for-tablet-portrait-up {
           @include font-secondary(16px, $color-1, 400);
         }
       }
+
+
+      @include for-tablet-portrait-up {
+        @include font-secondary(16px, $color-22, 400, 18px);
+      }     
     }
 
     &__text {
@@ -1402,13 +1153,14 @@ body {
       background-color: $color-5;
       padding: 20px 30px;
 
-      @include for-tablet-portrait-up {
-        @include font-secondary(14px, $color-22, 400, 24px);
-      }
-
       &_active {
         display: block;
       }
+
+
+      @include for-tablet-portrait-up {
+        @include font-secondary(14px, $color-22, 400, 24px);
+      }     
     }
   }
 
@@ -1425,17 +1177,18 @@ body {
       grid-column: 1;
     }
 
-
     &__link {
+      @extend %outline-custom;
       @include font-secondary(20px, $color-1, 400);
       border-bottom: 2px dashed $color-1;
 
-      @include for-tablet-portrait-up {
-        @include font-secondary(16px, $color-1, 400);
-      }
-
       &:hover {
         border-bottom: 2px dashed transparent;
+      }
+
+
+      @include for-tablet-portrait-up {
+        @include font-secondary(16px, $color-1, 400);
       }
     }
   }
@@ -1446,24 +1199,7 @@ body {
 
 
 .consultation {
-  // margin-top: 170px;
   background: url('../img/bg_ask.png') no-repeat 20% 115% / auto;
-
-  position: relative;
-
-  
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   width: 100%;
-  //   height: 200px;
-  //   background: url(../img/bg_cloud_100.png) repeat center top/auto;
-  //   position: absolute;
-  //   bottom: -30px;
-  //   z-index: 500;
-  // } 
-
-
 
   .heading {
     display: flex;
@@ -1526,8 +1262,13 @@ body {
     }
 
     &__link {
+      @extend %outline-custom;
       @include font-secondary(14px, $color-3, 400);
       border-bottom: 1px solid $color-3;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
     }
 
     &__data {
@@ -1548,6 +1289,7 @@ body {
     }
 
     &__input {
+      @extend %outline-custom;
       width: 100%;
       border-radius: 32px;
       background-color: $color-1;
@@ -1559,11 +1301,12 @@ body {
       &::placeholder {
         @include font-secondary(19px, $color-18, 300);
 
+
         @include for-tablet-portrait-up {
           @include font-secondary(16px, $color-18, 300);
         }
-
       }
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-8, 400);
@@ -1571,6 +1314,7 @@ body {
     }
 
     &__textarea {
+      @extend %outline-custom;
       width: 100%;
       height: 140px;
       border-radius: 32px;
@@ -1583,10 +1327,12 @@ body {
       &::placeholder {
         @include font-secondary(19px, $color-18, 300);
 
+
         @include for-tablet-portrait-up {
           @include font-secondary(16px, $color-18, 300);
         }
       }
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-8, 400);
@@ -1594,17 +1340,25 @@ body {
     }
 
     &__button {
+      @extend %outline-custom;
       @extend %reset_button; 
       width: 100%;
       padding: 19px 35px;
       border-radius: 32px;
+      border: 1px solid transparent;
       background-color: $color-10;
       @include font-secondary(19px, $color-1, 400);
+
+      &:hover {
+        @include font-secondary(19px, $color-10, 400);
+        background-color: $color-1;
+        border: 1px solid $color-9;
+      }
+
 
       @include for-tablet-portrait-up {
         @include font-secondary(16px, $color-1, 400);
       }
-
     }
   }
 }
@@ -1615,7 +1369,6 @@ body {
 
 .contacts {
   margin-top: 90px;
-
   overflow: hidden;
  
   .heading {
@@ -1640,14 +1393,14 @@ body {
       @include font-primary(40px, $color-8, 700);
       text-align: center;
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-8, 700);
-      }
-
-
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
+      }
+
+
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-8, 700);
       }
     }
   }
@@ -1663,19 +1416,17 @@ body {
       align-items: center;
     }
 
-
     @include for-tablet-portrait-up {
       flex-direction: column;
     }
-
-
   }
 
   .addresses {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 110px);
-    grid-column-gap: 15px;
+    grid-column-gap: 35px;
+
 
     @include for-tablet-portrait-up {
       grid-template-columns: repeat(auto-fit, minmax(175px, auto));
@@ -1692,9 +1443,11 @@ body {
     }
 
     &__text {
+
       &:first-of-type {
         margin-top: 15px;
       }
+
       @include font-secondary(17px, $color-18, 400, 24px);
     }
   }
@@ -1703,6 +1456,7 @@ body {
     margin-top: 20px;
 
     &__link {
+      @extend %outline-custom;
       @include font-secondary(17px, $color-18, 400);
     }
   }
@@ -1714,6 +1468,7 @@ body {
     justify-content: space-between;    
 
     &__link {
+      @extend %outline-custom;
       display: block;
       width: 17px;
       height: 17px;
@@ -1731,7 +1486,6 @@ body {
   }
 
   .map {
-  
     width: 100%;
     max-width: 735px;
     height: 285px;
@@ -1739,13 +1493,10 @@ body {
     overflow: hidden;
     border-radius: 10px;
 
+
     @include for-tablet-portrait-up {
       margin-top: 45px;
     }
-
-
-
-    
 
     &__iframe {
       display: block;
@@ -1760,10 +1511,13 @@ body {
 
 
 .footer {
-  background: url('../img/bg_footer.png') no-repeat center 99% / cover;
-  padding: 80px 0 20px 0;
-
-  overflow: hidden;
+  background: url('../img/bg_footer.png') no-repeat center center / cover;
+  padding: 80px 0 105px 0;
+ 
+  
+  @include for-tablet-portrait-up  {
+    padding: 80px 0 20px 0;
+  }
 
   .content {
     display: flex;
@@ -1774,31 +1528,24 @@ body {
     @include for-tablet-portrait-up {
       flex-direction: column;
     }
-
-    @include for-tablet-portrait-up  {
-     
-    }
-
   }
-
   
   .logo {
  
     &__link {
+      @extend %outline-custom;
       display: block;
       width: 110px;
       height: 90px;
-      background: url('../img/bg_logo_2.png') no-repeat center center / contain;
+      background: url('../img/bg_logo.png') no-repeat center center / contain;
     }
+
 
     @include for-tablet-portrait-up {
       margin-top: 25px;
       order: 1;
     }
-
-
   }
-
 
   .privacy-policy {
     text-align: right;
@@ -1806,8 +1553,14 @@ body {
     &__links { }
 
     &__link {
+      @extend %outline-custom;
       @include font-secondary(16px, $color-2, 400);
       border-bottom: 1px solid $color-2;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+
 
       @include for-tablet-portrait-up  {
         @include font-secondary(13px, $color-2, 400);
@@ -1818,31 +1571,10 @@ body {
       margin-top: 5px;
       @include font-secondary(16px, $color-2, 400);
 
+
       @include for-tablet-portrait-up  {
         @include font-secondary(13px, $color-2, 400);
       }
     }
   }
 }
-
-
-
-
-//pages
-// @import "page-about";
-// @import "page-delivery";
-// @import "page-contact";
-
-//style of components
-// @import "go-up";
-// @import "humburger";
-// @import "blind";
-// @import "popup";
-// @import "mobile-nav";
-// @import "input-validation";
-// @import "fotorama-custom";
-
-//media
-// @import "media-1280px";
-// @import "media-1024px";
-// @import "media-767px";
