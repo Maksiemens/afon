@@ -9,9 +9,9 @@
 
 @keyframes animatedTranslate {
   from {
-    transform: translateX(200%)
+    left: -30%;
   }
   to {
-    transform: translateX(-100%)
+    left: 100%;
   }
 }

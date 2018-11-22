@@ -355,9 +355,7 @@ const uglify = require('gulp-uglify');
 
 gulp.task('js', () => {
 	gulp.src([
-			'dev/libs/jquery/jquery-3.3.1.min.js',
-			'dev/libs/jquery/jquery-ui.min.js',
-			
+			'dev/libs/jquery/jquery-3.3.1.min.js',			
 			'dev/libs/wow/wow.min.js',
 			'dev/js/*.js'
 		])
@@ -410,11 +408,10 @@ gulp.task('clear', () => {
 	cache.clearAll();
 })
 
-
 //libs
 gulp.task('libs', () => {
 	gulp.src(['dev/libs/**/*.*','!dev/libs/**/*.js'])
-			.pipe(gulp.dest('prod/libs/'))			
+			.pipe(gulp.dest('prod/libs/'))
 });
 
 //fonts
