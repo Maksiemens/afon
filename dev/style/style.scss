@@ -30,11 +30,7 @@ body {
   // }
 }
 
-.page { 
-  // background-color: #fff;
-
-
-}
+.page { }
 
 .container {
   max-width: 1205px;
@@ -66,7 +62,7 @@ body {
     background: url('../img/bg_cloud_12.png') no-repeat center top / cover;
     position: absolute;
     bottom: -50px;
-    animation: animatedTranslate 80s linear infinite alternate;
+    animation: animatedTranslate 100s linear infinite alternate;
   }
 
   &::after {
@@ -77,6 +73,7 @@ body {
     background: url('../img/bg_cloud_11.png') repeat-x center top / auto;
     position: absolute;
     bottom: -30px;
+    animation: animatedBackground 150s linear infinite alternate;
   }
 
  
@@ -157,7 +154,8 @@ body {
       @include font-secondary(16px, $color-1, 400);
       border-radius: 23px;
       border: 1px solid $color-28;
-      padding: 11px 29px;
+      // padding: 11px 29px;
+      padding: 11px 30px 12px 30px;
       background-color: transparent;
   
       &:hover {
@@ -236,7 +234,8 @@ body {
       @include font-secondary(19px, $color-1, 400);
       background-color: $color-10;
       border-radius: 30px;
-      padding: 17px 43px;
+      // padding: 17px 43px;
+      padding: 15px 43px 18px 43px;
       border: 1px solid transparent;
   
       &:hover {
@@ -292,12 +291,13 @@ body {
 
     &__title {
       margin-top: 10px;
-      @include font-primary(40px, $color-8, 700);
+      @include font-primary(40px, $color-8, 700); 
+
 
       @include for-tablet-portrait-up {
         @include font-primary(26px, $color-8, 700);
       }
-
+  
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
@@ -365,8 +365,7 @@ body {
 
     @include for-tablet-portrait-up {
       grid-template-columns: repeat(1, 270px);
-      grid-template-rows: repeat(6, 1fr);
-      justify-content: center;
+      grid-template-rows: repeat(6, minmax(250px, 1fr));
     }
   }
 
@@ -477,11 +476,10 @@ body {
     display: block;
     width: 100%;
     height: 200px;
-    background: url('../img/bg_cloud_11.png') repeat center bottom / auto;
-    
+    background: url('../img/bg_cloud_11.png') repeat center bottom / auto;    
     position: absolute;
     top: -1px;
-    animation: animatedBackground 80s linear infinite alternate;
+    animation: animatedBackground 150s linear infinite alternate;
     transform: rotate(180deg);
   }
   
@@ -493,7 +491,7 @@ body {
     background: url('../img/bg_cloud_11.png') repeat center top / auto;
     position: absolute;
     bottom: -30px;
-    animation: animatedBackground 80s linear infinite alternate;
+    animation: animatedBackground 150s linear infinite alternate;
   }
 
   .heading {
@@ -521,14 +519,15 @@ body {
       margin-top: 10px;
       @include font-primary(40px, $color-1, 700);
 
-      &_size-s {
-        @include font-secondary(13px, $color-4, 400);
-        text-transform: uppercase;
-      }
-
 
       @include for-tablet-portrait-up {
         @include font-primary(26px, $color-1, 700);
+      }
+
+
+      &_size-s {
+        @include font-secondary(13px, $color-4, 400);
+        text-transform: uppercase;
       }
     }
   }
@@ -638,14 +637,15 @@ body {
       margin-top: 10px;
       @include font-primary(40px, $color-8, 700);
 
-      &_size-s {
-        @include font-secondary(13px, $color-13, 400);
-        text-transform: uppercase;
+      
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-8, 700);
       }
 
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-8, 700);
+      &_size-s {
+        @include font-secondary(13px, $color-13, 400);
+        text-transform: uppercase;
       }
     }
   }
@@ -735,14 +735,15 @@ body {
       margin-top: 10px;
       @include font-primary(40px, $color-8, 700);
 
-      &_size-s {
-        @include font-secondary(13px, $color-13, 400);
-        text-transform: uppercase;
+      
+      @include for-tablet-portrait-up  {
+        @include font-primary(26px, $color-8, 700);
       }
 
 
-      @include for-tablet-portrait-up  {
-        @include font-primary(26px, $color-8, 700);
+      &_size-s {
+        @include font-secondary(13px, $color-13, 400);
+        text-transform: uppercase;
       }
     }
   }
@@ -892,6 +893,7 @@ body {
       height: 130px;
       background-color: $color-26;
 
+
       @include for-tablet-portrait-up {
         height: 65px;
       }
@@ -902,15 +904,16 @@ body {
       @include font-primary(40px, $color-25, 700);
       text-align: center;
 
+      
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-25, 700);
+      }
+    
+
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
         text-transform: uppercase;
       } 
-
-
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-25, 700);
-      }
     }
   }
 
@@ -958,8 +961,8 @@ body {
       border-radius: 32px 0 0 32px;
       background-color: $color-1;
       border: 1px solid $color-9;
-      padding: 18px 60px 18px 35px;
-
+      // padding: 18px 60px 18px 35px;
+      padding: 18px 60px 20px 35px;
 
       @include font-secondary(19px, $color-8, 400);
 
@@ -987,7 +990,8 @@ body {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 19px 35px;
+      // padding: 19px 35px;
+      padding: 18px 39px 20px 39px;
       border-radius: 32px;
       border: 1px solid transparent;
       background-color: $color-10;
@@ -1044,7 +1048,7 @@ body {
     position: absolute;
     top: -1px;
     z-index: 500;
-    animation: animatedBackground 80s linear infinite alternate;
+    animation: animatedBackground 150s linear infinite alternate;
     transform: rotate(180deg);
   }
 
@@ -1056,7 +1060,7 @@ body {
     background: url('../img/bg_cloud_11.png') repeat center top/auto;
     position: absolute;
     bottom: -30px;
-    animation: animatedBackground 80s linear infinite alternate;
+    animation: animatedBackground 150s linear infinite alternate;
   } 
 
   .heading {
@@ -1082,14 +1086,15 @@ body {
       margin-top: 10px;
       @include font-primary(40px, $color-1, 700);   
 
-      &_size-s {
-        @include font-secondary(13px, $color-4, 400);
-        text-transform: uppercase;
+      
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-1, 700);
       }
 
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-1, 700);
+      &_size-s {
+        @include font-secondary(13px, $color-4, 400);
+        text-transform: uppercase;
       }
     }
   }
@@ -1224,9 +1229,11 @@ body {
       @include font-primary(40px, $color-8, 700);
       text-align: center;
 
+
       @include for-tablet-portrait-up  {
         @include font-primary(26px, $color-8, 700);
       }
+
 
       &_size-s {
         @include font-secondary(13px, $color-13, 400);
@@ -1250,6 +1257,7 @@ body {
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 25px; 
     grid-row-gap: 25px; 
+
 
     @include for-tablet-portrait-up  {
       grid-template-columns: repeat(1, 1fr);
@@ -1295,7 +1303,8 @@ body {
       border-radius: 32px;
       background-color: $color-1;
       border: 1px solid $color-9;
-      padding: 18px 35px;
+      // padding: 18px 35px;
+      padding: 17px 35px 19px 35px;
 
       @include font-secondary(19px, $color-8, 400);
 
@@ -1344,7 +1353,8 @@ body {
       @extend %outline-custom;
       @extend %reset_button; 
       width: 100%;
-      padding: 19px 35px;
+      // padding: 19px 35px;
+      padding: 19px 35px 19px 35px;
       border-radius: 32px;
       border: 1px solid transparent;
       background-color: $color-10;
@@ -1396,14 +1406,15 @@ body {
       @include font-primary(40px, $color-8, 700);
       text-align: center;
 
-      &_size-s {
-        @include font-secondary(13px, $color-13, 400);
-        text-transform: uppercase;
+      
+      @include for-tablet-portrait-up {
+        @include font-primary(26px, $color-8, 700);
       }
 
 
-      @include for-tablet-portrait-up {
-        @include font-primary(26px, $color-8, 700);
+      &_size-s {
+        @include font-secondary(13px, $color-13, 400);
+        text-transform: uppercase;
       }
     }
   }

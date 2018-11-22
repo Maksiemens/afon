@@ -25,12 +25,16 @@
   // background: url('../img/svg/video_play_icon-1.svg') no-repeat center center $color-1;
   background-color: $color-1;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
   &::after {
     content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -43%);
     border-top: 8px solid transparent;
     border-left: 13px solid $color-10;
     border-bottom: 8px solid transparent;

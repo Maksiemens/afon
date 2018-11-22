@@ -79,7 +79,7 @@ var $captionTitleSizeS = $('.js-captionTitleSizeS');
 var $booking = $('.js-booking');
 
 $headerTop.addClass('wow fadeInDown');
-$headerTop.attr('data-wow-delay', 0 + 's');
+// $headerTop.attr('data-wow-delay', 0 + 's');
 
 $captionTitleSizeM.addClass('wow fadeInDown');
 $captionTitleSizeM.attr('data-wow-delay', 1 + 's');
@@ -146,7 +146,7 @@ doDelay($card);
 function doDelay(element) {
 	var $initialDelay = 0;
 	element.each(function(index, item) {
-		var $resultDelay = $initialDelay+=0.1;
+		var $resultDelay = $initialDelay+=0.05;
 		var $resultDelayFix = +$resultDelay.toFixed(10);
 		$(item).attr('data-wow-delay', $resultDelayFix + 's');
 	});
@@ -157,11 +157,11 @@ function doDelay(element) {
 var $reviews = $('.js-reviews');
 $reviews.addClass('wow fadeInUp');
 $reviews.attr('data-wow-duration', 2 + 's');
-$reviews.attr('data-wow-offset', 700);
+$reviews.attr('data-wow-offset', 300);
 
 var $showMoreReviews = $('.js-showMoreReviews');
 $showMoreReviews.addClass('wow fadeIn');
-$showMoreReviews.attr('data-wow-duration', 3 + 's');
+$showMoreReviews.attr('data-wow-duration', 2.5 + 's');
 
 
 //needs
@@ -173,7 +173,8 @@ $needs.attr('data-wow-offset', 500);
 var $formNeeds = $('.js-formNeeds');
 $formNeeds.addClass('wow fadeInUp');
 $formNeeds.attr('data-wow-duration', 2 + 's');
-
+$formNeeds.attr('data-wow-delay', 2 + 's');
+// $needs.attr('data-wow-offset', 300);
 
 //questions
 var $questions = $('.js-questions');
@@ -201,12 +202,12 @@ $contacts.attr('data-wow-offset', 300);
 var $addresses = $('.js-addresses');
 $addresses.addClass('wow fadeInLeft');
 $addresses.attr('data-wow-duration', 2.5 + 's');
-$addresses.attr('data-wow-offset', 400);
+$addresses.attr('data-wow-offset', 300);
 
 var $map = $('.js-map');
 $map.addClass('wow fadeInRight');
 $map.attr('data-wow-duration', 2.5 + 's');
-$map.attr('data-wow-offset', 400);
+$map.attr('data-wow-offset', 300);
 
 
 //footer
@@ -227,13 +228,14 @@ function getDistance($element) {
 
 $(window).on('scroll', function() {
 
-	if( getDistance($about) < 300 ) {
+	if( getDistance($about) < 200 ) {
 		$aboutContainer.slideDown(2000);
 	}
 
-	if( getDistance($questions) < 500 ) {
+	if( getDistance($questions) < 200 ) {
 		$questionsContainer.slideDown(3000);
 	}
+	// console.log(getDistance($questions));
 
 });
 
@@ -244,8 +246,9 @@ $(window).on('scroll', function() {
 //google maps
 initMap();
 function initMap() {
-	var myLatLng = {lat: 55.757920, lng: 37.623515};				
-	var map = new google.maps.Map(document.querySelector('.js-map'), {
+	var myLatLng = {lat: 55.757920, lng: 37.623515};
+
+	var	map = new google.maps.Map(document.querySelector('.js-map'), {
 		center: myLatLng,
 		zoom: 17,
 		// disableDefaultUI: true,
@@ -426,10 +429,14 @@ function initMap() {
 					]
 			}
 	]
-	});						
+	});
+
 	var marker = new google.maps.Marker({
 		map: map,
 		position: myLatLng,
-		icon: '../img/bg_map_icon-1.png'
+		icon: 'img/bg_map_icon-1.png?raw=true',
+		draggable: true,
+    animation: google.maps.Animation.DROP
 	});
+	marker.setMap(map);
 }
